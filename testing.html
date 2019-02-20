@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+</head>
+<body>
+    <h3> Do you play rock , paper , or scissors? </h3>
+      <input type="text" id="playerInput" 
+      <!-- player enters rock , paper , scissors. must be case insensitive -->
+
+      <button onclick="gameround()" > Let's Go ! </button>
+       <!-- calls game round function -->
+
+        <p id="output"></p>
+  <script>
+   
+     //player input must be case insensitive so use String toLowerCase() Method
+     
+ 
+     function getcomputerchoice() {
+      let getcomputerchoice =  Math.floor(Math.random() * 3);
+      
+      switch(getcomputerchoice) {
+      case 0:
+        getcomputerchoice = "rock";
+        break;
+    case 1:
+        getcomputerchoice = "paper";
+        break;
+    case 2:
+        getcomputerchoice = "scissors";
+        
+     
+     
+    }
+      
+        return getcomputerchoice ;
+           }
+function gameround() {
+
+function playerSelection(getInput) {
+       
+     
+       switch(getInput) {
+       case 'paper' : 
+        getInput = 'paper';
+        break ;
+       case  'rock' :
+        getInput = 'rock';
+        break ;
+       case 'scissors' :
+        getInput = 'scissors';
+        break ;
+        default: getInput = "hello" ;
+        }
+     
+      
+     
+      
+      
+       return getInput ;
+       }
+
+      
+
+
+
+    
+    matchresult = "" ;
+    if (playerSelection == getcomputerchoice) {
+     matchresult = "tie" ;
+    
+    } else {
+     switch(playerSelection) {
+     case "rock" :
+    
+ 
+     if (getcomputerchoice == "scissors") {
+       matchresult = "Player Win" ;
+     
+     } else {
+        matchresult = " Computer Wins";
+      
+      }
+     break;
+     case "paper" :
+     if (getcomputerchoice == "rock") {
+       matchresult = "Player Wins" ;
+  
+     } else {
+        matchresult = " Computer Wins";
+       
+      }
+     break;
+     
+     case  "scissors" :
+     
+     if (getcomputerchoice == "paper") {
+       matchresult = "Player Wins" ;
+     
+     } else {
+        matchresult = " Computer Wins";
+      
+      }
+     return matchresult
+      } //switch statement close block
+  
+    } // if statement close block 
+var results = 'The player chose'  + ' ' + playerSelection + ' ' + 'and the computer chose' +  ' ' +    getcomputerchoice +  '   the result is a ' + '' + matchresult  ;
+document.getElementById("output").innerHTML = results ;
+return results ;
+} // gameround function close block
+
+
+  </script>
+</body>
+</html>
