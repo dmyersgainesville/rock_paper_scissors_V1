@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+<script>
+    let x = 0;
+    console.log(x);
+    let getInput; 
+    // playerSelection function just takes player input from text box
+    //player input (variable getInput) must be case insensitive so use String toLowerCase() Method
+    //need to input some more form validation as well
+
+
+    function submitMe() {
+
+     inputSanitization(document.getElementById("playerSelection").value.toLowerCase())
+
+    }
+
+    function inputSanitization(getInput) {
+        
+      
+      switch(getInput) {
+       case 'paper' : 
+        getInput = 'paper';
+        break ;
+       case  'rock' :
+        getInput = 'rock';
+        break ;
+       case 'scissors' :
+        getInput = 'scissors';
+        break ;
+        default: getInput = "hello" ;
+        }
+    
+        
+        x = 5;
+        console.log(x);
+        console.log(getInput);
+       }
+       
+</script>
+            
+<title>
+</title>
+</head>
+<body>
+        
+
+
+</body>
+
+</html>
