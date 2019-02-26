@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<head>
+<script>
+let gameTally;
+let playerScore = 0;
+let computerScore = 0;
+
+game()
+    
+    let getInput; 
+    let computerSelection = computerPlay();
+    let playerSelection = getInput;
+
+
+function game() {
+
+
+    for (gameTally = 0; gameTally < 5; gameTally++) {
+        alert();
+        alert = playerSelection
+        computerPlay() = computerSelection;
+        playRound();
+  
+    }
+    
+}
+
+    
+    //submit button takes playerSelection text field ID and 
+function submitMe() {
+
+inputSanitization(document.getElementById("playerInput").value)
+
+}
+
+function inputSanitization(getInput) {
+   
+ getInput = getInput.toLowerCase();
+
+ switch(getInput) {
+  case 'paper' : 
+   getInput = 'paper';
+   break ;
+  case  'rock' :
+   getInput = 'rock';
+   break ;
+  case 'scissors' :
+   getInput = 'scissors';
+   break ;
+   default: getInput = "hello" ;
+   }
+     
+    
+        document.getElementById("output").innerHTML = getInput ;
+        
+        x = 5;
+        
+       }
+
+
+
+    function computerPlay() {
+      let computersChooser =  Math.floor(Math.random() * 3);
+      
+      switch(computersChooser) {
+      case 0:
+        computersChooser = "rock";
+        break;
+      case 1:
+        computersChooser = "paper";
+        break;
+      case 2:
+        computersChooser = "scissors";
+        
+     
+     
+    }
+      
+    return  computersChooser;  
+           }
+
+
+
+    function playRound(playerSelection, computerSelection) {
+
+    let matchresult;
+
+   
+        if (playerSelection == computerSelection) {
+        matchresult = "tie" ;
+        
+        } else {
+                    switch(playerSelection) {
+                        case "rock" :
+                        
+                    
+                            if (computerSelection == "scissors") {
+                                matchresult = "Player Win" ;
+                                playerScore++
+                        
+                                } else {
+                                matchresult = " Computer Wins";
+                                computerScore++
+                                }
+                                break;
+                        case "paper" :
+                                if (computerSelection == "rock") {
+                                matchresult = "Player Wins" ;
+                                playerScore++
+                                } else {
+                                matchresult = " Computer Wins";
+                                computerScore++
+                                }
+                                break;
+                        
+                        case  "scissors" :
+                        
+                                if (computerSelection == "paper") {
+                                matchresult = "Player Wins" ;
+                                playerScore++
+                                } else {
+                                    matchresult = " Computer Wins";
+                                    computerScore++
+                                }
+                        
+                    
+                
+                    } 
+    
+                 } 
+
+    let results = 'The player chose'  + ' ' + playerSelection + ' ' + 'and the computer chose' +  ' ' +    computerSelection +  '   the result is a ' + '' + matchresult
+    return results;
+} 
+       
+</script>
+            
+<title>
+</title>
+</head>
+<body>
+        <h3> Do you play rock , paper , or scissors? </h3>
+        <input type="text" id="playerInput" 
+        <!-- player enters rock , paper , scissors. must be case insensitive -->
+  
+        <button onclick= "submitMe()" > Let's Go ! </button>
+         <!-- calls player selection function -->
+  
+          <p id="output"></p>
+
+
+</body>
+
+</html>
